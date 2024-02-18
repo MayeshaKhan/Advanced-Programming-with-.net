@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="taskModelStoreContainer" CdmEntityContainer="taskEntities">
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="taskModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="taskModel.Student">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cgpa" ColumnName="cgpa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coursesses">
+      <EntityTypeMapping TypeName="taskModel.Coursess">
+        <MappingFragment StoreEntitySet="Coursess">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="courseCode" ColumnName="courseCode" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

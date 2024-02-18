@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="taskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'task.dbo.Coursess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Coursess">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="courseCode" />
+      <PropertyRef Name="credit" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="courseCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="credit" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="cgpa" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="taskModelStoreContainer">
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coursess" EntityType="Self.Coursess" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Coursess].[id] AS [id], 
+    [Coursess].[name] AS [name], 
+    [Coursess].[courseCode] AS [courseCode], 
+    [Coursess].[credit] AS [credit]
+    FROM [dbo].[Coursess] AS [Coursess]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
